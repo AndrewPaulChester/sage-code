@@ -1,0 +1,29 @@
+name: sage
+channels:
+  - defaults
+  - pytorch
+dependencies:
+  - python=3.7
+  - pytorch==1.2.0
+  - torchvision==0.4.0
+  - cudatoolkit=10.0
+  - cython
+  - lockfile
+  - mako==1.0.10
+  - numba=0.45.1
+  - path.py==12.0.1
+  - patchelf==0.9
+  - networkx==2.3
+  - pandas
+  - pip:
+    - python-dateutil==2.8.1
+    - tensorboard==1.14.0
+    - future==0.18.2
+    - gym==0.14.0
+    - roboschool==1.0.48
+    - gtimer==1.0.0b5
+    - opencv-python==4.4.0.42
+    - pyyaml==5.1.2
+    - matplotlib==3.3.1
+
+

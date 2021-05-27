@@ -1,0 +1,18 @@
+######################## TAXI ###########################
+#Scripted baseline
+python baseline.py  --env-name ["predictable5-mixed-taxi-v2","predictable10-mixed-taxi-v2","predictable-mixed-taxi-v2"]
+#PPO flat
+python ppo_global.py  --env-name ["predictable5-mixed-taxi-v2","predictable10-mixed-taxi-v2","predictable-mixed-taxi-v2"] --entropy-coef 0.006 --symbolic "none" --eval-steps 2000 --epochs 50 --eps 1e-7 --log-interval 1 --save-interval 1  --use-linear-lr-decay
+#SAGE
+python ppo_global.py --env-name ["predictable5-mixed-taxi-v2","predictable10-mixed-taxi-v2","predictable-mixed-taxi-v2"] --entropy-coef 0.006 --symbolic "ordinal" --eval-steps 2000 --epochs 50 --eps 1e-7 --log-interval 1 --save-interval 1  --use-linear-lr-decay --naive-discounting
+#SDRL
+python sdrl.py --env-name v1 --alpha 1 --beta 0.5 --alpha-final 0.01
+
+######################## CRAFT ###########################
+#SAGE
+python dqn_pretrained.py --env-name "abstract-rooms-craft-v2" --discount-rate 0.95 --b-init-value 0.01 --experience-interval 3 --epochs 1000 --learning-rate 3.0e-05 --double-dqn --naive-discounting
+#hDQN
+python dqn_pretrained.py "hierarchical-abstract-rooms-craft-v2" --discount-rate 0.95 --b-init-value 0.01 --experience-interval 3 --epochs 1000 --learning-rate 3.0e-05 --double-dqn --naive-discounting --action-space "skills"
+#PPO flat
+python ppo_global.py --env-name "rooms-craft-v2" --entropy-coef 0.006 --symbolic "none" --eval-steps 0 --epochs 2500 --eps 1e-7 --log-interval 1 --save-interval 1  --use-linear-lr-decay
+

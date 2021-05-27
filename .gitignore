@@ -107,6 +107,9 @@ venv.bak/
 tmp/
 experiments/trained_models
 
+#image outputs 
+*.png
+
 #plan outputs
 planning/plans/
 

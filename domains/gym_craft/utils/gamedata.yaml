@@ -1,0 +1,72 @@
+tiles:
+  tree:
+    blocking: True
+    mineable:
+      required: None
+      item: log
+    colour:
+      - 0
+      - 255
+      - 0
+  rock:
+    blocking: True
+    mineable:
+      required: wooden_pickaxe
+      item: stone
+    colour:
+      - 0
+      - 0
+      - 255
+  wall:
+    blocking: True
+    mineable:
+      required: N/A
+      item: N/A
+    colour:
+      - 0
+      - 0
+      - 0
+  coin:
+    blocking: False
+    mineable:
+      required: N/A
+      item: N/A
+    colour:
+      - 200
+      - 200
+      - 0
+  
+items:
+  - log
+  - stone
+  - plank
+  - stick
+  - wooden_pickaxe
+  - stone_pickaxe
+
+
+
+recipes:
+  plank:
+    quantity: 4
+    ingredients:
+      log: 1
+    catalyst: None
+  stick:
+    quantity: 4
+    ingredients:
+      plank: 1
+    catalyst: None
+  wooden_pickaxe:
+    quantity: 1
+    ingredients:
+      plank: 3
+      stick: 2
+    catalyst: None
+  stone_pickaxe:
+    quantity: 1
+    ingredients:
+      stone: 3
+      stick: 2
+    catalyst: None
+  
